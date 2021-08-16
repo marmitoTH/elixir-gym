@@ -10,6 +10,10 @@ use Mix.Config
 config :elixirgym,
   ecto_repos: [Elixirgym.Repo]
 
+config :elixirgym, Elixirgym.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :elixirgym, ElixirgymWeb.Endpoint,
   url: [host: "localhost"],
