@@ -1,7 +1,6 @@
 <center>
-  <h3><strong>ElixirGym</strong></h3>
+  <h3 align="center"><strong>ElixirGym</strong></h3>
 </center>
-</br>
 
 ## 🔍 About
 
