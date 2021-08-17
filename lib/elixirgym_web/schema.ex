@@ -1,0 +1,9 @@
+defmodule ElixirgymWeb.Schema do
+  use Absinthe.Schema
+
+  import_types ElixirgymWeb.Schema.Types.Root
+
+  query do
+    import_fields :root_query
+  end
+end
