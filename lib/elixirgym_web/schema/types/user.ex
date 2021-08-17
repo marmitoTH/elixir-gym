@@ -9,4 +9,10 @@ defmodule ElixirgymWeb.Schema.Types.User do
     field :name, non_null(:string)
     field :email, non_null(:string)
   end
+
+  input_object :create_user_input do
+    field :name, non_null(:string)
+    field :email, non_null(:string)
+    field :password, non_null(:string)
+  end
 end
