@@ -2,6 +2,8 @@ defmodule Elixirgym.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Elixirgym.Training
+
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @fields [:name, :email, :password]
@@ -10,6 +12,8 @@ defmodule Elixirgym.User do
     field :email, :string
     field :name, :string
     field :password, :string
+
+    has_one :training, Training
 
     timestamps()
   end
