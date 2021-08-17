@@ -11,6 +11,13 @@ defmodule ElixirgymWeb.Router do
     get "/imc", IMCController, :index
   end
 
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphql", Absinthe.Plug, schema: ElixirgymWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: ElixirgymWeb.Schema
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
