@@ -1,6 +1,7 @@
 defmodule ElixirgymWeb.Schema.Types.Root do
   use Absinthe.Schema.Notation
 
+  alias Crudry.Middlewares.TranslateErrors
   alias ElixirgymWeb.Resolvers.User, as: UserResolver
 
   import_types ElixirgymWeb.Schema.Types.User
@@ -18,6 +19,7 @@ defmodule ElixirgymWeb.Schema.Types.Root do
       arg :input, non_null(:create_user_input)
 
       resolve &UserResolver.create/2
+      middleware TranslateErrors
     end
   end
 end
