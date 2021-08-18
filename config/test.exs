@@ -7,7 +7,7 @@ use Mix.Config
 # Run `mix help test` for more information.
 config :elixirgym, Elixirgym.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "docker",
   database: "elixirgym_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
