@@ -25,5 +25,11 @@ defmodule Elixirgym.User do
     |> validate_length(:password, min: 6)
     |> validate_format(:email, ~r/@/)
     |> unique_constraint([:email])
+    |> hash_password()
+  end
+
+  defp hash_password(changeset) do
+    %{password_hash: hash} = Argon2.add_hash(changeset.changes.password)
+    put_change(changeset, :password, hash)
   end
 end
